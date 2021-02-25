@@ -19,7 +19,13 @@ export default (() => {
 		<Components.Pseudo />
 		<Hr />
 		<Section>
-			<Override slot="SectionContent" height="550px" align-items="center" justify-content="center" />
+			<Override
+				slot="SectionContent"
+				height="550px"
+				align-items="center"
+				justify-content="center"
+				flex-direction="row"
+			/>
 			<Components.Animation
 				width="320px"
 				height="320px"
@@ -29,18 +35,94 @@ export default (() => {
 				align-items="center"
 				justify-content="center"
 				iteration="once"
-				animation="Juggle"
+				animation="Jello"
+				duration="2s"
+				test={false}
+				trigger="Click"
+				md-background="--color-lightD2"
+			>
+				<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+					Click
+				</Text>
+			</Components.Animation>
+			<Components.Animation
+				width="320px"
+				height="320px"
+				overflow-x="hidden"
+				overflow-y="hidden"
+				display="flex"
+				align-items="center"
+				justify-content="center"
+				iteration="once"
+				animation="Jello"
+				duration="2s"
+				test={false}
+				trigger="Hover"
+				md-background="--color-lightD2"
+			>
+				<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+					Hover
+				</Text>
+			</Components.Animation>
+			<Components.Animation
+				width="320px"
+				height="320px"
+				overflow-x="hidden"
+				overflow-y="hidden"
+				display="flex"
+				align-items="center"
+				justify-content="center"
+				iteration="once"
+				animation="Jello"
 				duration="2s"
 				test={false}
 				trigger="Onload"
 				md-background="--color-lightD2"
 			>
-				<Text text-align="center" font="900 80px --fontFamily-serifTimes">
-					ЖИР
+				<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+					Onload
+				</Text>
+			</Components.Animation>
+			<Components.Animation
+				width="320px"
+				height="320px"
+				overflow-x="hidden"
+				overflow-y="hidden"
+				display="flex"
+				align-items="center"
+				justify-content="center"
+				iteration="once"
+				animation="Jello"
+				duration="2s"
+				test={false}
+				trigger="Appearance from above"
+				md-background="--color-lightD2"
+			>
+				<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+					Above
+				</Text>
+			</Components.Animation>
+			<Components.Animation
+				width="320px"
+				height="320px"
+				overflow-x="hidden"
+				overflow-y="hidden"
+				display="flex"
+				align-items="center"
+				justify-content="center"
+				iteration="once"
+				animation="Jello"
+				duration="2s"
+				test={false}
+				trigger="Appearance from below"
+				md-background="--color-lightD2"
+			>
+				<Text text-align="center" font="900 50px --fontFamily-serifTimes">
+					Below
 				</Text>
 			</Components.Animation>
 		</Section>
-		<Hr />
+		<Hr height="160px" />
 		<Components.Pseudo />
 		<Link
 			font={"--capture"}

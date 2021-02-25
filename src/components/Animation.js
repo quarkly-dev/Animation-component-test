@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import atomize from '@quarkly/atomize';
 import styles, { css, keyframes } from 'styled-components';
 import presets from './AnimationPresets';
@@ -50,7 +50,7 @@ const Animation = ({
 	const wrapperRef = useRef({});
 	const onEnterEvent = useMemo(() => trigger === 'Hover' ? () => togglePlay(true) : undefined, [trigger]);
 	const onLeaveEvent = useMemo(() => trigger === 'Hover' ? () => togglePlay(false) : undefined, [trigger]);
-	const onClickEvent = useMemo(() => trigger === 'Click' ? () => togglePlay(!isPlay) : undefined, [trigger]);
+	const onClickEvent = useCallback(() => trigger === 'Click' && togglePlay(!isPlay), [trigger, isPlay]);
 
 	const onAboveEvent = e => {
 		const {
@@ -170,7 +170,7 @@ export default atomize(Animation)({
 			weight: .5
 		},
 		test: {
-			title: 'Play animation',
+			title: 'Play animation (не забывай снимать галочку!)',
 			control: 'checkbox',
 			weight: 1
 		}
